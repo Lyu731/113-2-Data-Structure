@@ -1,0 +1,26 @@
+class Solution {
+public:
+    bool isMonotonic(vector<int>& nums) {
+
+        //count=1 (up = true)
+        //count=1 (down = true)
+        bool up = 1;
+        bool down = 1;
+        
+        //count=1(i = 0)
+
+        for (int i = 0; i < nums.size()-1; i++) {
+        //count=1(i < nums.size()-1)
+        //count=1(i++)
+            if (nums[i] > nums[i + 1]) //count=3 (access num[i] access num[i+1] >)
+            //count=1(up = 0)
+                up = 0;
+            if (nums[i] < nums[i + 1]) //count=1 (<)
+            //count=1(down = 0)
+                down = 0;
+        }
+        //count=1
+        return up||down;
+    }
+};
+//8n+4
